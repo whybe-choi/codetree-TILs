@@ -18,6 +18,6 @@ for row in range(n):
             for c in range(col, col + 3):
                 num_coin += grid[r][c]
 
-    max_coin = max(max_coin, num_coin)
+        max_coin = max(max_coin, num_coin)
 
 print(max_coin)
