@@ -2,7 +2,7 @@ n, m = map(int, input().split())
 
 seqs = [list(map(int, input().split())) for _ in range(n)]
 
-num_happy = 0
+answer = 0 
 
 for col in range(n):
     cols = []
@@ -12,13 +12,9 @@ for col in range(n):
 
 for seq in seqs:
     count = 1
-    for i in range(n-1):
-        if seq[i] == seq[i+1]:
-            count += 1
-        else:
-            count = 1
-    
-    if count >= m:
-        num_happy += 1
+    for i in range(n-m+1):
+        if seq[i:i+m].count(seq[i]) == m:
+            answer+=1
+            break
 
-print(num_happy)
+print(answer)
