@@ -13,10 +13,10 @@ for col in range(n):
 for seq in seqs:
     count = 1
     for i in range(n-1):
-        
+
         if count >= m:
-        answer += 1
-        break
+            answer += 1
+            break
 
         if seq[i] == seq[i+1]:
             count += 1
