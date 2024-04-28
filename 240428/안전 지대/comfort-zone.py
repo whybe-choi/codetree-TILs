@@ -38,6 +38,6 @@ for k in range(1, max_k+1):
                 visited[x][y] = 1
                 dfs(x, y, k)
 
-    safe_zone.append([count, k])
+    safe_zone.append([k, count])
 
-print(*sorted(safe_zone, key=lambda x: (x[0], -x[1]))[-1])
+print(*sorted(safe_zone, key=lambda x: (x[1], -x[0]))[-1])
