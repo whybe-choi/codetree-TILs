@@ -16,7 +16,7 @@ def dfs(x, y, k):
             dfs(new_x, new_y, k)
 
 count = 0
-blocks = []
+max_block = 0 
 
 for x in range(n):
     for y in range(n):
@@ -27,11 +27,10 @@ for x in range(n):
             visited[x][y] = True
             num_block += 1
             dfs(x, y, k)
-            blocks.append(num_block)
         
         if num_block >= 4:
             count += 1
         
-max_block = max(blocks)
+        max_block = max(max_block, num_block)
 
 print(count, max_block)
