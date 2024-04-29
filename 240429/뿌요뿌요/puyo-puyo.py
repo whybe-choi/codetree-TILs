@@ -22,15 +22,17 @@ for x in range(n):
     for y in range(n):
         # 같은 숫자로 이루어져 있는 경우 하나의 블럭으로 생각
         k = board[x][y]
-        num_block = 0
         if not visited[x][y]:
             visited[x][y] = True
-            num_block += 1
+            # 굳이 if문 밖에서 num_block을 선언해줄 필요가 없음
+            # 최초 방문했을 때 방문 횟수를 1로 설정해주면 됨
+            num_block = 1
             dfs(x, y, k)
         
-        if num_block >= 4:
-            count += 1
-        
-        max_block = max(max_block, num_block)
+            if num_block >= 4:
+                count += 1
+
+            # dfs가 끝나고 나면 최댓값을 갱신해줌
+            max_block = max(max_block, num_block)
 
 print(count, max_block)
