@@ -33,4 +33,4 @@ for _ in range(k):
     count += 1
     dfs()
 
-print(answer)
+print(count)
