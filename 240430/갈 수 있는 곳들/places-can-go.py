@@ -27,10 +27,12 @@ count = 0
 for _ in range(k):
     r, c = map(int, input().split())
     queue = deque()
-    # 모든 시작점의 위치에 적혀있는 숫자는 0이므로 방문 가능
-    queue.append((r-1, c-1))
-    visited[r-1][c-1] = True
-    count += 1
-    dfs()
+    # 해당 시작점을 방문하지 않았을 경우
+    if not visited[r-1][c-1]:
+        # 모든 시작점의 위치에 적혀있는 숫자는 0이므로 방문 가능
+        queue.append((r-1, c-1))
+        visited[r-1][c-1] = True
+        count += 1
+        dfs()
 
 print(count)
