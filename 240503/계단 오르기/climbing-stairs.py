@@ -12,4 +12,3 @@ for i in range(4, 1001):
     dp[i] = dp[i-2] + dp[i-3]
 
 print(dp[n % 10007])
-print(dp)
