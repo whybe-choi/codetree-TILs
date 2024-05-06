@@ -2,29 +2,19 @@ import sys
 
 n, m = map(int, sys.stdin.readline().rstrip().split())
 
-weights, values = [], []
+bag = []
 for _ in range(n):
     w, v = map(int, sys.stdin.readline().rstrip().split())
-    weights.append(w)
-    values.append(v)
+    bag.append([w, v])
 
-dp = [[0 for _ in range(m+1)] for _ in range(n)]
+dp = [[0 for _ in range(m+1)] for _ in range(n+1)]
 
-# 초기값
-dp[0][weights[0]] = values[0]
-
-for i in range(1, n):
-    for j in range(m+1):
-        if j >= weights[i]:
-            dp[i][j] = max(dp[i-1][j-weights[i]]+values[i], dp[i-1][j])
+for i in range(1, n+1):
+    for j in range(1, m+1):
+        if j >= bag[i-1][0]:
+            dp[i][j] = max(dp[i-1][j-bag[i-1][0]]+bag[i-1][1], dp[i-1][j])
         else:
             dp[i][j] = dp[i-1][j]
 
-
 # 배낭에 넣을 수 있는 물건들의 가치합의 최댓값
-max_value = -1
-for i in range(n):
-    for j in range(m+1):
-        max_value = max(dp[i][j], max_value)
-
-print(max_value)
+print(dp[n][m])
