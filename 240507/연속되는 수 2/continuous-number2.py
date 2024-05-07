@@ -8,8 +8,8 @@ for _ in range(n):
     nums.append(num)
 
 base = nums[0]
-count = 0
-for i in range(n):
+count = 1
+for i in range(1, n):
     if base == nums[i]: 
         count += 1
     else:
