@@ -8,11 +8,14 @@ for _ in range(n):
     nums.append(num)
 
 base = nums[0]
-count = 1
+cnt = 1
+max_cnt = 0
 for i in range(1, n):
     if base == nums[i]: 
-        count += 1
+        cnt += 1
     else:
         base = nums[i]
+        cnt = 1 
+    max_cnt = max(max_cnt, cnt)
 
-print(count)
+print(max_cnt)
