@@ -4,7 +4,7 @@ a = sys.stdin.readline().rstrip()
 
 max_n = -sys.maxsize
 
-for i in range(1, len(a)):
+for i in range(len(a)):
     if a[i] == "0":
         temp = a[:i] + "1" + a[i+1:]
     else:
