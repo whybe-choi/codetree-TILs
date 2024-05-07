@@ -12,7 +12,7 @@ count = 0
 for i in range(n):
     if base == nums[i]: 
         count += 1
-
-    base = nums[i]
+    else:
+        base = nums[i]
 
 print(count)
