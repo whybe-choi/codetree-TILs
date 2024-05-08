@@ -6,31 +6,21 @@ a, b = [0], [0]
 # a
 for _ in range(n):
     d, t = sys.stdin.readline().rstrip().split()
-    t = int(t)
-    if d == "L":
-        for _ in range(t):
-            a.append(a[-1]-1)
-    else:
-        for _ in range(t):
-            a.append(a[-1]+1)
+    for _ in range(int(t)):
+        a.append(a[-1] + (1 if d == 'R' else -1)
 
 # b
 for _ in range(m):
-    d,t = sys.stdin.readline().rstrip().split()
-    t = int(t)
-    if d == "L":
-        for _ in range(t):
-            b.append(b[-1]-1)
-    else:
-        for _ in range(t):
-            b.append(b[-1]+1)
+    d, t = sys.stdin.readline().rstrip().split()
+    for _ in range(int(t)):
+        a.append(b[-1] + (1 if d == 'R' else -1)
 
 min_len = min(len(a), len(b))
 
+answer = -1
 for i in range(1, min_len):
     if a[i] == b[i]:
         answer = i
         break
-    answer = -1
 
 print(answer)
