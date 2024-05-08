@@ -27,7 +27,7 @@ for _ in range(m):
 
 min_len = min(len(a), len(b))
 
-for i in range(1, min_len+1):
+for i in range(1, min_len):
     if a[i] == b[i]:
         answer = i
         break
