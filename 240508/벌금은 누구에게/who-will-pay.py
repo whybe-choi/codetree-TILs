@@ -10,5 +10,6 @@ for _ in range(m):
     fine[student] += 1
     if fine[student] >= k:
         answer = student
+        break
 
 print(answer)
