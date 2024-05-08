@@ -13,7 +13,7 @@ for _ in range(n):
 for _ in range(m):
     d, t = sys.stdin.readline().rstrip().split()
     for _ in range(int(t)):
-        a.append(b[-1] + (1 if d == 'R' else -1))
+        b.append(b[-1] + (1 if d == 'R' else -1))
 
 min_len = min(len(a), len(b))
 
