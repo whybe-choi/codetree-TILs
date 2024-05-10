@@ -10,8 +10,11 @@ for _ in range(n):
     bucket[idx] += candy
 
 max_candy = 0
-for i in range(max_loc - 2*k + 1):
-    sum_candy = sum(bucket[i:i+2*k+1])
+for c in range(max_loc+1):
+    left = c-k if c-k > 0 else 0
+    right = c+k if c+k < max_loc else max_loc
+    sum_candy = sum(bucket[left:right+1])
     max_candy = max(max_candy, sum_candy)
+
 
 print(max_candy)
